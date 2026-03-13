@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Financeiro</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+
+<body>
+
+<div id="login">
+
+<h2>Meu Financeiro</h2>
+
+<input type="password" id="senha" placeholder="Digite a senha">
+
+<button onclick="verificarSenha()">Entrar</button>
+
+</div>
+
+
+<div id="app">
+
+<header>
+
+<h2>Financeiro</h2>
+
+</header>
+
+
+<section class="dashboard">
+
+<h3>Resumo</h3>
+
+<div class="cards">
+
+<div class="card">
+<p>Receitas</p>
+<h2 id="totalReceitas">0</h2>
+</div>
+
+<div class="card">
+<p>Gastos</p>
+<h2 id="totalGastos">0</h2>
+</div>
+
+<div class="card">
+<p>Saldo</p>
+<h2 id="saldoTotal">0</h2>
+</div>
+
+</div>
+
+<canvas id="grafico"></canvas>
+
+</section>
+
+
+<section>
+
+<h3>Adicionar gasto</h3>
+
+<input id="descGasto" placeholder="Descrição">
+
+<input id="valorGasto" type="number" placeholder="Valor">
+
+<select id="categoria">
+
+<option>IFood</option>
+<option>Mercado</option>
+<option>Transporte</option>
+<option>Compras</option>
+<option>Contas</option>
+<option>Automóvel</option>
+
+</select>
+
+<select id="cartaoSelect"></select>
+
+<input type="file" id="imagemGasto">
+
+<button onclick="salvarGasto()">Salvar gasto</button>
+
+</section>
+
+
+<section>
+
+<h3>Adicionar receita</h3>
+
+<input id="descReceita" placeholder="Descrição">
+
+<input id="valorReceita" type="number" placeholder="Valor">
+
+<select id="tipoReceita">
+
+<option>Salário</option>
+<option>Pix</option>
+<option>Dinheiro</option>
+<option>Extra</option>
+
+</select>
+
+<button onclick="salvarReceita()">Salvar receita</button>
+
+</section>
+
+
+<section>
+
+<h3>Cartões</h3>
+
+<input id="nomeCartao" placeholder="Nome do cartão">
+
+<input id="limiteCartao" type="number" placeholder="Limite">
+
+<button onclick="criarCartao()">Adicionar cartão</button>
+
+<ul id="listaCartoes"></ul>
+
+</section>
+
+
+<section>
+
+<h3>Histórico</h3>
+
+<select id="filtroMes"></select>
+<select id="filtroAno"></select>
+
+<ul id="listaGastos"></ul>
+
+</section>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
